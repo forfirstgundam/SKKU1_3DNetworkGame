@@ -1,7 +1,7 @@
 using Photon.Pun;
 using UnityEngine;
 
-public class PlayerMoveAbility : PlayerAbility, IPunObservable
+public class PlayerMove : PlayerAbility, IPunObservable
 {
     private CharacterController _characterController;
     private Animator _animator;

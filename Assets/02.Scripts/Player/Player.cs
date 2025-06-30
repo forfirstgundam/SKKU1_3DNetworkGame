@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        if (!GetAbility<PlayerMoveAbility>().IsJumping && !GetAbility<PlayerMoveAbility>().IsRunning)
+        if (!GetAbility<PlayerMove>().IsJumping && !GetAbility<PlayerMove>().IsRunning)
         {
             Stat.Stamina = Mathf.Min(Stat.MaxStamina, Stat.Stamina + Stat.StaminaRecovery * Time.deltaTime);
         }

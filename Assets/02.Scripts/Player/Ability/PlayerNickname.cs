@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-public class PlayerNicknameAbility : PlayerAbility
+public class PlayerNickname : PlayerAbility
 {
     public TextMeshProUGUI NicknameTextUI;
 

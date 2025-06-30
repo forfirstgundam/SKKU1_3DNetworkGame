@@ -1,7 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
 
-public class PlayerRotateAbility : PlayerAbility
+public class PlayerRotate : PlayerAbility
 {
     // 목표: 마우스를 조작하면 캐릭터/카메라를 그 방향으로 회전시키고 싶다.
     public Transform CameraRoot;
@@ -23,6 +23,9 @@ public class PlayerRotateAbility : PlayerAbility
             
             UI_PlayerStat ui_playerStat = FindAnyObjectByType<UI_PlayerStat>();
             ui_playerStat.SetPlayer(_owner);
+
+            MinimapCamera minimapCamera = FindAnyObjectByType<MinimapCamera>();
+            minimapCamera.Target = CameraRoot;
         }
     }
     

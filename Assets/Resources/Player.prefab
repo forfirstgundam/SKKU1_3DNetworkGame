@@ -2301,7 +2301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5907439390033311789}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 685d2c6bdf00bfe43b054b5bfab128b4, type: 3}
+  m_Script: {fileID: 11500000, guid: df07810d821b0ed4989416647291ae7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7791216917909646366
@@ -2364,7 +2364,6 @@ MonoBehaviour:
   - {fileID: 4850361566416450686}
   - {fileID: 7193820102048925399}
   - {fileID: 3617351033781011651}
-  - {fileID: 0}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -2403,14 +2402,17 @@ MonoBehaviour:
     SynchronizeType: 1
     Name: Move
   - Type: 9
-    SynchronizeType: 1
+    SynchronizeType: 0
     Name: Attack1
   - Type: 9
-    SynchronizeType: 1
+    SynchronizeType: 0
     Name: Attack2
   - Type: 9
-    SynchronizeType: 1
+    SynchronizeType: 0
     Name: Attack3
+  - Type: 4
+    SynchronizeType: 0
+    Name: Run
   m_SynchronizeLayers:
   - SynchronizeType: 1
     LayerIndex: 0
