@@ -3,8 +3,9 @@ using UnityEngine;
 using System;
 using ExitGames.Client.Photon.StructWrapping;
 using UnityEngine.UI;
+using Unity.VisualScripting;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
     public PlayerStat Stat;
 
@@ -34,9 +35,16 @@ public class Player : MonoBehaviour
         
         throw new Exception($"어빌리티 {type.Name}을 {gameObject.name}에서 찾을 수 없습니다.");
     }
-    
 
-    private void Update()
+    public void Damaged(float damage)
+    {
+        Stat.Health = Mathf.Max(0, Stat.Health - damage);
+        GetAbility<PlayerHealthBar>().Refresh();
+
+        Debug.Log($"남은체력: {Stat.Health}");
+    }
+
+private void Update()
     {
         if (!GetAbility<PlayerMove>().IsJumping && !GetAbility<PlayerMove>().IsRunning)
         {

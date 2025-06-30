@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerAttack : PlayerAbility
@@ -15,7 +16,7 @@ public class PlayerAttack : PlayerAbility
     private void Start()
     {
         _animator = GetComponent<Animator>();
-        DeactiveCollider();
+        DeactivateCollider();
     }
 
     // - 위치 / 회전처럼 상시로 확인이 필요한 데이터 동기화 : IPunObservable(OnPhotonSerializeView)
@@ -48,14 +49,16 @@ public class PlayerAttack : PlayerAbility
         }
     }
 
-    public void ActiveCollider()
+    public void ActivateCollider()
     {
         WeaponCollider.enabled = true;
+        Debug.Log("collider on");
     }
 
-    public void DeactiveCollider()
+    public void DeactivateCollider()
     {
         WeaponCollider.enabled = false;
+        Debug.Log("collider off");
     }
 
 
@@ -65,9 +68,10 @@ public class PlayerAttack : PlayerAbility
         _animator.SetTrigger($"Attack{randomNumber}");
     }
 
-    private void Hit(ControllerColliderHit hit)
+    public void Hit(IDamageable damagedObject)
     {
-        
+        DeactivateCollider();
+
+        damagedObject.Damaged(_owner.Stat.Damage);
     }
 }
-

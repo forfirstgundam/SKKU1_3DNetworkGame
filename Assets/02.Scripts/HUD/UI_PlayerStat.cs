@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -32,6 +33,7 @@ public class UI_PlayerStat : MonoBehaviour
         }
         
         StatminaSlider.value = _player.Stat.Stamina /  _player.Stat.MaxStamina;
+        HealthSlider.value = _player.Stat.Health / _player.Stat.MaxHealth;
     }
     
 }

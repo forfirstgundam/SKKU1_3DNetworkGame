@@ -65,15 +65,15 @@ ModelImporter:
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
       events:
-      - time: 0.054868713
+      - time: 0.03386031
         functionName: ActivateCollider
         data: 
-        objectReferenceParameter: {fileID: 5907439390033311789, guid: 5afc9135872b4234cb1885ea8b3b1a1f, type: 3}
+        objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.7195122
-        functionName: DeactivavateCollider
+      - time: 0.78253746
+        functionName: DeactivateCollider
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
