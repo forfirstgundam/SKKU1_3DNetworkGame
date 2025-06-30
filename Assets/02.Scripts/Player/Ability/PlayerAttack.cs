@@ -10,9 +10,12 @@ public class PlayerAttack : PlayerAbility
     private bool _isAttacking = false;
     public bool IsAttacking => _isAttacking;
 
+    public Collider WeaponCollider;
+
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        DeactiveCollider();
     }
 
     // - 위치 / 회전처럼 상시로 확인이 필요한 데이터 동기화 : IPunObservable(OnPhotonSerializeView)
@@ -45,10 +48,26 @@ public class PlayerAttack : PlayerAbility
         }
     }
 
+    public void ActiveCollider()
+    {
+        WeaponCollider.enabled = true;
+    }
+
+    public void DeactiveCollider()
+    {
+        WeaponCollider.enabled = false;
+    }
+
+
     [PunRPC]
     private void PlayAttackAnimation(int randomNumber)
     {
         _animator.SetTrigger($"Attack{randomNumber}");
+    }
+
+    private void Hit(ControllerColliderHit hit)
+    {
+        
     }
 }
 
